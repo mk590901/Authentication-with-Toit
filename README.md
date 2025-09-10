@@ -34,7 +34,7 @@
 }
 ```
 > To use __Firebase Authentication__ to generate an ID Token (JWT), you need to enable authentication for __Firebase Realtime Database__ settings:
-* In the __Firebase Console__, go to __Authentication__ -> Sign-in method.
+* In the __Firebase Console__, go to __Authentication__ ➜ Sign-in method.
 * Enable at least one sign-in method, such as __Anonymous__ (for simplicity) or __Email/Password__. In this case, __Anonymous__ is selected.
 
 ## Application management
