@@ -9,6 +9,33 @@
 
 ## Implementation
 
+## Preparation of Firebase Realtime Database via Firebase Console
+
+> Get API Key
+
+* Select your project.
+* Go to __Project Settings__ (gear icon in the upper left corner -> __Project settings__).
+* In the __General tab__, scroll down to the apps section.
+* If you don't have an app registered, add a web (or Android) app.
+* Click __Add app__ → select a web app (icon </>).
+* Register your app and extract the __API__ Key from the configuration.
+
+> Set up security rules
+
+* To use the __API key__, set up security rules in Firebase Realtime Database (in the Realtime Database -> Rules section). Example of rules allowing access with an API key:
+```
+{
+  "rules": {
+    "users": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+  }
+}
+```
+> To use __Firebase Authentication__ to generate an ID Token (JWT), you need to enable authentication for Firebase Realtime Database settings:
+* In the __Firebase Console__, go to __Authentication__ -> Sign-in method.
+* Enable at least one sign-in method, such as __Anonymous__ (for simplicity) or __Email/Password__. In this case, __Anonymous__ is selected.
 
 ## Application management
 
