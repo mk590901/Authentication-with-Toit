@@ -59,6 +59,7 @@ get_tokens -> Map? :
     return result
 
 // Updating ID Token using Refresh Token
+
 refresh_id_token refresh_token/string? -> Map? :
   if not refresh_token:
     return null
@@ -108,6 +109,7 @@ refresh_id_token refresh_token/string? -> Map? :
 
 //  Adding a record to Firebase Realtime Database
 //  with retry when token expires
+
 create_user name/string surname/string email/string phone/string age/int -> none:
   if not id_token:
     print "Invalid token, failed to create user"
@@ -169,7 +171,7 @@ create_user name/string surname/string email/string phone/string age/int -> none
     client.close
     network.close
 
-main:
+main :
 
   certificate-roots.install-common-trusted-roots
 
