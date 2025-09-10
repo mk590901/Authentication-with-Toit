@@ -1,8 +1,13 @@
-# Firebase-Authentication-with-Toit
+# Firebase Authentication with Toit
 
 
 ## Introduction
 
+
+## Brief description
+
+
+## Implementation
 
 
 ## Application management
