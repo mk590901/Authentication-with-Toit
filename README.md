@@ -26,7 +26,7 @@ The application implements the standard Firebase method for relatively secure da
   "localId"      : "<user-uid>"
 }
 ```
-* Sending data for writing using __endpoint__ "https://<your-project-id>-default-rtdb.firebaseio.com/<collection-name>.json?auth=<idToken>"
+* Sending data for writing using __endpoint__ "https://{your-project-id}-default-rtdb.firebaseio.com/{collection-name}.json?auth={idToken}"
 * Request body is person information:
 ```
 {
