@@ -44,9 +44,33 @@ The application implements the standard Firebase method for relatively secure da
 }
 ```
 
-## Issues
+### Issues
 
+* __ID Token (JWT)__ is the primary token that is used to authenticate requests to __Firebase__ (e.g. in the REST API to add records to the database). It contains user information and has a limited lifetime of 1 hour (3600 seconds). After expiration, it becomes invalid and Firebase will return an error (e.g. "ID token has expired").
 
+__Refresh Token__ is a long-lived token that does not automatically expire after an hour. It is intended specifically for refreshing the __ID Token__. Refresh token may be invalidated only in rare cases: if the user explicitly logged out of the account, if the account was disabled, if suspicious changes were detected (e.g. password or email change), or if the token was revoked by the administrator. In a typical scenario, a refresh token lives for weeks, months, or even longer as long as the user is active.
+
+* The need to change the token will be detected the next time a user is added. You will receive a 401: UNAUTHORIZED ACCESS error. In this case, you need to request a new token and repeat the user addition operation.
+
+* You can refresh the token on request by sending a POST request to the endpoint https://securetoken.googleapis.com/v1/token?key={your-api-key} with the body:
+```
+{
+  "grant_type"    : "refresh_token",
+  "refresh_token" : "<your-refresh-token>"
+}
+```
+
+* Response:
+* 
+```
+{
+  "access_token"  : "<new-id-token>",
+  "expires_in"    : "3600",
+  "token_type"    : "Bearer",
+  "refresh_token" : "<new-refresh-token>",
+  "user_id"       : "<user-uid>"
+}
+```
 
 ## Implementation
 
