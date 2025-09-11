@@ -4,6 +4,7 @@ Below an application in the __Toit__ programming language that demonstrates addi
 
 ## Introduction
 
+The application uses the approach described earlier in the project https://github.com/mk590901/toit-rest-api-db, namely adding data to the cloud DB using __posting__. However, unlike the previous version, the current one uses the __Firebase authentication__ system. That is, this version of the application provides a more secure way to transfer and save data.
 
 ## Brief description
 
