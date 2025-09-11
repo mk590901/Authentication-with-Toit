@@ -74,7 +74,19 @@ The application implements the standard Firebase method for relatively secure da
 
 ## Implementation
 
+The presented application implements the approaches described above:
 
+> Function __get_id_token__ :
+* Sends a POST request to the Firebase Authentication and return Map? with the id_token and refresh_token fields extracted from the response.
+* Returns null if the request fails or an error occurs.
+
+> Function __refresh_id_token__ :
+* Returns Map? with the id_token and refresh_token fields or null if the request failed.
+
+> Function __create_user__ :
+* Returns the current refresh_token (or a new one if it was updated) so that it can be used in the future.
+* On error 401 (__UNAUTHORIZED ACCESS__), calls __refresh_id_token__ and, if a new __id_token__ and __refresh_token__ are received, it updates the global variable.
+* Repeats the request with the new __id_token__.
 
 ## Preparation of Firebase Realtime Database via Firebase Console
 
