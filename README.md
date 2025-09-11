@@ -8,8 +8,48 @@ The application uses the approach described earlier in the project https://githu
 
 ## Brief description
 
+The application implements the standard Firebase method for relatively secure data transfer and storage:
+
+* Obtaining an __ID Token__ via the __REST API__, using the __endpoint__ https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=<your-api-key> for anonymous authentication.
+* Request body:
+```
+{
+  "returnSecureToken": true
+}
+```
+* Response:
+```
+{
+  "idToken"      : "<jwt-token>",
+  "refreshToken" : "<refresh-token>",
+  "expiresIn"    : "3600",
+  "localId"      : "<user-uid>"
+}
+```
+* Sending data for writing using __endpoint__ "https://<your-project-id>-default-rtdb.firebaseio.com/<collection-name>.json?auth=<idToken>"
+* Request body is person information:
+```
+{
+  "name"         : <name>,
+  "surname"      : <surname>,
+  "e-mail"       : <email>,
+  "phone"        : <phone>,
+  "age"          : <age>
+}
+```
+* Response if success:
+```
+{
+  name: <added-record-id>
+}
+```
+
+## Issues
+
+
 
 ## Implementation
+
 
 ## Preparation of Firebase Realtime Database via Firebase Console
 
