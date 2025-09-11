@@ -1,5 +1,6 @@
 # Firebase Authentication with Toit
 
+Below an application in the __Toit__ programming language that demonstrates adding records to the __Firebase Realtime Database__ using authentication via generated __ID Token__ (JWT).
 
 ## Introduction
 
