@@ -10,7 +10,7 @@ The application uses the approach described earlier in the project https://githu
 
 The application implements the standard Firebase method for relatively secure data transfer and storage:
 
-* Obtaining an __ID Token__ via the __REST API__, using the __endpoint__ "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=<your-api-key>" for anonymous authentication.
+* Obtaining an __ID Token__ via the __REST API__, using the __endpoint__ "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key={your-api-key}" for anonymous authentication.
 * Request body:
 ```
 {
