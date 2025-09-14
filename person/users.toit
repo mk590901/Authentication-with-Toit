@@ -142,7 +142,7 @@ create_user name/string surname/string email/string phone/string age/int -> none
 
       if response.status_code == OK :
         print "User was created $(data)"
-      else if response.status_code == UNAUTHORIZED :  // Если токен истёк (unauthorized)
+      else if response.status_code == UNAUTHORIZED :  // if token expired (unauthorized)
         print "Token expired, trying to update ..."
         new_tokens := refresh_id_token refresh_token
         if new_tokens :
