@@ -4,11 +4,11 @@ import encoding.json
 import certificate-roots
 
 //  API Key
-API_KEY   := "AIzaSyB9puHJBfrFuNNoFYBHXvUQFpO6kE7W4eQ"
+API_KEY   := "ASADASA"
 
 //  Firebase Realtime Database URL
 URI_AUTH    := "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=$API_KEY"
-URI_DB      := "https://auth-2b7d3-default-rtdb.firebaseio.com/users.json"
+URI_DB      := "XAXAXA"
 URI_REFRESH := "https://securetoken.googleapis.com/v1/token?key=$API_KEY"
 
 OK          := 200
